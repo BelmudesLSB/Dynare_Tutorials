@@ -48,3 +48,4 @@ end;
 
 varobs y1 y2;
 estimation(datafile=simu2, mh_replic=1200, mh_jscale=.7,nodiagnostic);
+

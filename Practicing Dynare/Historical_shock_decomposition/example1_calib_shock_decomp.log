@@ -1,0 +1,88 @@
+Starting Dynare (version 6.0).
+Calling Dynare with arguments: none
+Starting preprocessing of the model file ... 
+Found 6 equation(s). 
+Evaluating expressions... 
+Computing static model derivatives (order 1). 
+Normalizing the static model... 
+Finding the optimal block decomposition of the static model... 
+2 block(s) found: 
+  0 recursive block(s) and 2 simultaneous block(s). 
+  the largest simultaneous block has 4 equation(s) 
+                                 and 4 feedback variable(s). 
+Computing dynamic model derivatives (order 1). 
+Normalizing the dynamic model... 
+Finding the optimal block decomposition of the dynamic model... 
+2 block(s) found: 
+  0 recursive block(s) and 2 simultaneous block(s). 
+  the largest simultaneous block has 4 equation(s) 
+                                 and 4 feedback variable(s). 
+Preprocessing completed. 
+Preprocessing time: 0h00m01s.
+
+MODEL SUMMARY
+
+  Number of variables:         6
+  Number of stochastic shocks: 2
+  Number of state variables:   3
+  Number of jumpers:           3
+  Number of static variables:  1
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables           e         u
+e            0.000081  0.000008
+u            0.000008  0.000081
+
+POLICY AND TRANSITION FUNCTIONS
+                                   y               c               k               a               h               b
+Constant                    1.080683        0.803592       11.083604               0        0.291756               0
+k(-1)                       0.005358        0.038542        0.941817               0       -0.012547               0
+a(-1)                       1.836717        0.424583        1.419062        0.950000        0.341715        0.025000
+b(-1)                       0.837086       -0.318740        1.419062        0.025000        0.341715        0.950000
+e                           1.911522        0.456074        1.455448        1.000000        0.350477               0
+u                           0.830840       -0.347518        1.455448               0        0.350477        1.000000
+
+
+MOMENTS OF SIMULATED VARIABLES
+VARIABLE              MEAN       STD. DEV.        VARIANCE        SKEWNESS        KURTOSIS
+y                 1.023097        0.079514        0.006322        0.243873        0.036048
+c                 0.763843        0.044377        0.001969        0.110288       -0.400983
+k                10.024458        1.055528        1.114139        0.146928       -0.042342
+a                -0.016380        0.029766        0.000886        0.181294       -0.489119
+h                 0.290641        0.012242        0.000150        0.125936        0.167120
+b                -0.024782        0.031597        0.000998        0.118918        0.164177
+
+
+CORRELATION OF SIMULATED VARIABLES
+VARIABLE         y       c       k       a       h       b
+y           1.0000  0.8248  0.8210  0.9550  0.6680  0.7879
+c           0.8248  1.0000  0.9663  0.8088  0.1302  0.5371
+k           0.8210  0.9663  1.0000  0.7285  0.1679  0.6928
+a           0.9550  0.8088  0.7285  1.0000  0.6102  0.5737
+h           0.6680  0.1302  0.1679  0.6102  1.0000  0.6748
+b           0.7879  0.5371  0.6928  0.5737  0.6748  1.0000
+
+
+AUTOCORRELATION OF SIMULATED VARIABLES
+VARIABLE         1       2       3       4       5
+y           0.9668  0.9333  0.9027  0.8740  0.8462
+c           0.9908  0.9819  0.9715  0.9586  0.9445
+k           0.9963  0.9931  0.9880  0.9813  0.9729
+a           0.9522  0.9030  0.8576  0.8118  0.7684
+h           0.9197  0.8400  0.7737  0.7179  0.6667
+b           0.9583  0.9187  0.8861  0.8535  0.8218
+
+
+
+VARIANCE DECOMPOSITION SIMULATING ONE SHOCK AT A TIME (in percent)
+                    e                 u  Tot. lin. contr.
+y               50.59             36.01             86.60
+c               36.74             48.09             84.83
+k               29.55             61.52             91.06
+a               72.79             14.74             87.53
+h               47.02             42.58             89.59
+b                8.36             91.60             99.96
+Note: numbers do not add up to 100 due to non-zero correlation of simulated shocks in small samples
+
+Total computing time : 0h00m17s

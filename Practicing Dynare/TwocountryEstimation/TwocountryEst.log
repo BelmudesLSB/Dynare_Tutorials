@@ -94,7 +94,7 @@ FVAL          -435.9004
 Improvement   28.2506
 Ftol          1e-05
 Htol          1e-05
-Elapsed time for iteration 0.30267 s.
+Elapsed time for iteration 0.30787 s.
  
 Iteration 2
 Predicted improvement:        0.030728089
@@ -118,7 +118,7 @@ FVAL          -435.9446
 Improvement   0.044159
 Ftol          1e-05
 Htol          1e-05
-Elapsed time for iteration 0.17538 s.
+Elapsed time for iteration 0.18144 s.
  
 Iteration 3
 Predicted improvement:        0.000002959
@@ -224,6 +224,9 @@ e2        0.0900   0.0808  0.0040   invg 10.0000
 Log data density [Laplace approximation] is 420.058860.
 
 Estimation::mcmc: Multiple chains mode.
+Estimation::mcmc: Old mh-files successfully erased!
+Estimation::mcmc: Old metropolis.log file successfully erased!
+Estimation::mcmc: Creation of a new metropolis.log file.
 Estimation::mcmc: Searching for initial values...
 Estimation::mcmc: Initial values found!
 
@@ -261,4 +264,4 @@ standard deviation of shocks
 
 e1           0.090       0.0829      0.0765      0.0901     invg      10.0000
 e2           0.090       0.0814      0.0749      0.0874     invg      10.0000
-Total computing time : 0h00m19s
+Total computing time : 0h00m16s
