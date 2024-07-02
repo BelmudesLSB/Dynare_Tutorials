@@ -1,0 +1,40 @@
+function [g2_v, T_order, T] = dynamic_g2(y, x, params, steady_state, T_order, T)
+if nargin < 6
+    T_order = -1;
+    T = NaN(22, 1);
+end
+[T_order, T] = TwocountryVardec.sparse.dynamic_g2_tt(y, x, params, steady_state, T_order, T);
+g2_v = NaN(32, 1);
+g2_v(1)=T(9)+exp(y(9))*exp(y(9))*getPowerDeriv(exp(y(9)),(-params(1)),2);
+g2_v(2)=(-(T(3)*params(4)*(T(10)+exp(y(17))*exp(y(17))*getPowerDeriv(exp(y(17)),(-params(1)),2))));
+g2_v(3)=(-(params(4)*T(10)*T(16)));
+g2_v(4)=(-(T(2)*params(4)*T(10)));
+g2_v(5)=(-(T(1)*params(3)*exp(y(21))*(T(15)+exp(y(11))*exp(y(11))*getPowerDeriv(exp(y(11)),params(3)-1,2))));
+g2_v(6)=(-(T(1)*T(16)));
+g2_v(7)=(-(T(1)*T(2)));
+g2_v(8)=T(11)+exp(y(10))*exp(y(10))*getPowerDeriv(exp(y(10)),(-params(1)),2);
+g2_v(9)=(-(T(6)*params(4)*(T(12)+exp(y(18))*exp(y(18))*getPowerDeriv(exp(y(18)),(-params(1)),2))));
+g2_v(10)=(-(params(4)*T(12)*T(20)));
+g2_v(11)=(-(T(5)*params(4)*T(12)));
+g2_v(12)=(-(T(4)*params(3)*exp(y(22))*(T(19)+exp(y(12))*exp(y(12))*getPowerDeriv(exp(y(12)),params(3)-1,2))));
+g2_v(13)=(-(T(4)*T(20)));
+g2_v(14)=(-(T(4)*T(5)));
+g2_v(15)=exp(y(9));
+g2_v(16)=exp(y(10));
+g2_v(17)=(-(exp(y(3))*(1-params(2))))-T(21);
+g2_v(18)=(-T(14));
+g2_v(19)=exp(y(11));
+g2_v(20)=(-((1-params(2))*exp(y(4))))-T(22);
+g2_v(21)=(-T(18));
+g2_v(22)=exp(y(12));
+g2_v(23)=(-T(7));
+g2_v(24)=(-T(8));
+g2_v(25)=(-T(21));
+g2_v(26)=(-T(14));
+g2_v(27)=(-T(7));
+g2_v(28)=exp(y(15));
+g2_v(29)=(-T(22));
+g2_v(30)=(-T(18));
+g2_v(31)=(-T(8));
+g2_v(32)=exp(y(16));
+end
