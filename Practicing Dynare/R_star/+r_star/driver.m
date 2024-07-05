@@ -571,6 +571,7 @@ steady;
 oo_.dr.eigval = check(M_,options_,oo_);
 options_.graph_format = {'pdf'};
 options_.irf = 0;
+options_.nograph = true;
 options_.order = 1;
 options_.periods = 1000;
 var_list_ = {};
@@ -591,9 +592,11 @@ options_.histval_file = true;
 options_histvalf = struct();
 options_histvalf.datafile = 'initial_conditions_for_forecasting';
 [M_.endo_histval, M_.exo_histval, M_.exo_det_histval] = histvalf(M_, options_histvalf);
-options_.periods = 100;
+options_.periods = 50;
 var_list_ = {'re'};
 oo_.forecast = dyn_forecast(var_list_,M_,options_,oo_,'simul');
+var_list_ = {'pia'};
+oo_ = shock_decomposition(M_,oo_,options_,var_list_,bayestopt_,estim_params_);
 
 
 oo_.time = toc(tic0);

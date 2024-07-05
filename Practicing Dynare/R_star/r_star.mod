@@ -140,12 +140,9 @@ steady;
 
 check;
 
-stoch_simul(irf=0,order=1,periods=1000,graph_format=pdf);
+stoch_simul(irf=0,order=1,periods=1000,graph_format=pdf, nograph);
 calib_smoother(datafile=data_EU_gdpd);
 smoother2histval(outfile = initial_conditions_for_forecasting);
 histval_file(datafile = initial_conditions_for_forecasting);
-forecast(periods=100) re;
-
-
-%shock_decomposition re;
-
+forecast(periods=50) re;
+shock_decomposition pia;
