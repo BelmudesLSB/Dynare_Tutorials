@@ -595,7 +595,8 @@ options_histvalf.datafile = 'initial_conditions_for_forecasting';
 options_.periods = 50;
 var_list_ = {'re'};
 oo_.forecast = dyn_forecast(var_list_,M_,options_,oo_,'simul');
-var_list_ = {'pia'};
+options_.no_graph.shock_decomposition = true;
+var_list_ = {};
 oo_ = shock_decomposition(M_,oo_,options_,var_list_,bayestopt_,estim_params_);
 
 

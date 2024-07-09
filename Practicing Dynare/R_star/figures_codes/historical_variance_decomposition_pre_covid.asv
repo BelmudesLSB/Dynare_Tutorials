@@ -54,7 +54,7 @@ for variable = 10:1:16
 
     % Save the plot
     plot_folder = 'figures_results';
-    plot_name = ['historical_decomposition_precovid_', variable_descriptions{variable}, '.png'];
+    plot_name = ['historical_decomposition_variable_', variable_descriptions{variable}, '.png'];
     plot_path = fullfile(plot_folder, plot_name);
     saveas(gcf, plot_path);
     disp(['Plot saved as: ', plot_path]);

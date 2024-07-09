@@ -145,4 +145,4 @@ calib_smoother(datafile=data_EU_gdpd);
 smoother2histval(outfile = initial_conditions_for_forecasting);
 histval_file(datafile = initial_conditions_for_forecasting);
 forecast(periods=50) re;
-shock_decomposition pia;
+shock_decomposition(nograph);
