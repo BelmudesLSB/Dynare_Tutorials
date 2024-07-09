@@ -71,15 +71,17 @@ clear RGDP DGDP FFR;
 save('data_EU_gdpd.mat', 'gya', 'pia', 'iras')
 
 %% Compute dynare routine and store data efficient rate series:
-dynare r_star.mod
+dynare r_star_taylor.mod
 
 %Run historical variance decomposition:
 folderPath = 'figures_codes';
 addpath(folderPath);
 switch option
     case 1
-        run('historical_variance_decomposition_full_sample.m');
-        run('efficient_rate_full_sample.m');
+        %run('historical_variance_decomposition_full_sample.m');
+        %run('historical_variance_decomposition_zoom_covid.m');
+        %run('efficient_rate_full_sample.m');
+        %run('efficient_rate_zoom_covid.m');
         run('back_to_steady_state_full_sample.m')
     case 2
         run('historical_variance_decomposition_pre_covid.m');

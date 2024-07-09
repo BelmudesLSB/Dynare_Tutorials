@@ -1,5 +1,7 @@
 %% Path back to steady state in the absense of shocks.
 
+zoom_date = datetime(2019, 07, 1);
+re_data = oo_.SmoothedVariables.re;
 forecast_re = oo_.forecast.Mean.re;
 smoothed_re = oo_.SmoothedVariables.re;
 
