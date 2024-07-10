@@ -39,25 +39,47 @@ rhodelta rhogamma rhou sigmadelta sigmagamma sigmau sigmai;
 % Set calibrated parameters 
 %--------------------------------------------------------------------------
 
-% Calibrated parameters
+% Calibrated parameters original:
+%beta = 0.99;
+%omega = 0.9435;       
+%xi = 0.0004;       
+%eta = 0.7919;         
+%zeta = 0.4813;        
+%rho = 0.7969;         
+%phipi = 1.4414;      
+%phix = 0.5110;      
+%pistar = 2.2251;      
+%ra = 1.6378;         
+%gammaa = 2.2555;      
+%rhodelta = 0.9665;    
+%rhogamma = 0.7232;    
+%rhou = 0.2108;        
+%sigmadelta = 1.0209;  
+%sigmagamma = 1.8365;  
+%sigmau = 0.4249;      
+%sigmai = 0.34;     
+
+% Median estimates calibrated parameters:
 beta = 0.99;
-omega = 0.9435;       
-xi = 0.0004;       
-eta = 0.7919;         
-zeta = 0.4813;        
-rho = 0.7969;         
-phipi = 1.4414;      
-phix = 0.5110;      
+omega = 0.99;       
+xi = 0.0021;       
+eta = 0.62;         
+zeta = 0.48;        
+rho = 0.75;         
+phipi = 1.14;      
+phix = 0.2975;
+      
 pistar = 2.38;      
 ra = 1.88;         
-gammaa = 2.93;      
+gammaa = 2.93;
+      
 rhodelta = 0.91;    
 rhogamma = 0.55;    
 rhou = 0.37;        
 sigmadelta = 1.29;  
 sigmagamma = 1.88;  
 sigmau = 0.41;      
-sigmai = 0.33;     
+sigmai = 0.33;      
 
 %--------------------------------------------------------------------------
 % Model

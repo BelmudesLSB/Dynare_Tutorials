@@ -67,10 +67,12 @@ eta = 0.62;
 zeta = 0.48;        
 rho = 0.75;         
 phipi = 1.14;      
-phix = 0.2975;      
+phix = 0.2975;
+      
 pistar = 2.38;      
 ra = 1.88;         
-gammaa = 2.93;      
+gammaa = 2.93;
+      
 rhodelta = 0.91;    
 rhogamma = 0.55;    
 rhou = 0.37;        
