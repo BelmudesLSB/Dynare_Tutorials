@@ -323,6 +323,19 @@ var_list_ = {};
 options_.smoother = true;
 options_.order = 1;
 [oo_, M_, options_, bayestopt_] = evaluate_smoother(options_.parameter_set, var_list_, M_, oo_, options_, bayestopt_, estim_params_);
+options_smoother2histval = struct();
+options_smoother2histval.outfile = 'initial_conditions_for_forecasting';
+smoother2histval(options_smoother2histval);
+%
+% HISTVAL_FILE statement
+%
+options_.histval_file = true;
+options_histvalf = struct();
+options_histvalf.datafile = 'initial_conditions_for_forecasting';
+[M_.endo_histval, M_.exo_histval, M_.exo_det_histval] = histvalf(M_, options_histvalf);
+options_.periods = 50;
+var_list_ = {'re'};
+[oo_.forecast,info] = dyn_forecast(var_list_,M_,options_,oo_,'simul');
 
 
 oo_.time = toc(tic0);
