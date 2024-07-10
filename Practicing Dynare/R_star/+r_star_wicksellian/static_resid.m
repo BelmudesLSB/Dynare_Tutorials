@@ -16,17 +16,17 @@ function residual = static_resid(T, y, x, params, T_flag)
 %
 
 if T_flag
-    T = r_star_taylor.static_resid_tt(T, y, x, params);
+    T = r_star_wicksellian.static_resid_tt(T, y, x, params);
 end
 residual = zeros(16, 1);
 lhs = y(14);
-rhs = params(11)+400*y(8);
+rhs = params(10)+400*y(8);
 residual(1) = lhs - rhs;
 lhs = y(15);
-rhs = params(9)+400*y(4);
+rhs = params(8)+400*y(4);
 residual(2) = lhs - rhs;
 lhs = y(16);
-rhs = params(9)+params(10)+400*y(6);
+rhs = params(8)+params(9)+400*y(6);
 residual(3) = lhs - rhs;
 lhs = y(1);
 rhs = y(1)-(y(6)-y(4)-y(12))*T(4);
@@ -56,16 +56,16 @@ lhs = y(11)*params(2)+T(2)*(y(11)-T(3)*y(11))-(y(11)-T(3)*y(11))*T(3)*params(1)*
 rhs = (params(1)*y(8)-y(8))*T(2)*T(3)+y(9)*params(1)*T(3)/(1-params(1)*T(3));
 residual(12) = lhs - rhs;
 lhs = y(6);
-rhs = y(6)*params(6)+(1-params(6))*(y(4)*params(7)+y(10)*params(8)/4)+params(18)/400*x(1);
+rhs = y(6)*params(6)+(1-params(6))*(y(12)+y(4)*params(7))+params(17)/400*x(1);
 residual(13) = lhs - rhs;
 lhs = y(9);
-rhs = y(9)*params(12)+params(15)/400*x(3);
+rhs = y(9)*params(11)+params(14)/400*x(3);
 residual(14) = lhs - rhs;
 lhs = y(8);
-rhs = y(8)*params(13)+params(16)/400*x(4);
+rhs = y(8)*params(12)+params(15)/400*x(4);
 residual(15) = lhs - rhs;
 lhs = y(7);
-rhs = y(7)*params(14)+params(17)/400*x(2);
+rhs = y(7)*params(13)+params(16)/400*x(2);
 residual(16) = lhs - rhs;
 if ~isreal(residual)
   residual = real(residual)+imag(residual).^2;

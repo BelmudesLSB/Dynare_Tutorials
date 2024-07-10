@@ -16,7 +16,7 @@ function g1 = static_g1(T, y, x, params, T_flag)
 %
 
 if T_flag
-    T = r_star_taylor.static_g1_tt(T, y, x, params);
+    T = r_star_wicksellian.static_g1_tt(T, y, x, params);
 end
 g1 = zeros(16, 16);
 g1(1,8)=(-400);
@@ -55,10 +55,10 @@ g1(12,9)=(-(params(1)*T(3)/(1-params(1)*T(3))));
 g1(12,11)=params(2)+T(2)*(1-T(3))-T(3)*params(1)*T(2)*(1-T(3));
 g1(13,4)=(-((1-params(6))*params(7)));
 g1(13,6)=1-params(6);
-g1(13,10)=(-((1-params(6))*params(8)/4));
-g1(14,9)=1-params(12);
-g1(15,8)=1-params(13);
-g1(16,7)=1-params(14);
+g1(13,12)=(-(1-params(6)));
+g1(14,9)=1-params(11);
+g1(15,8)=1-params(12);
+g1(16,7)=1-params(13);
 if ~isreal(g1)
     g1 = real(g1)+2*imag(g1);
 end

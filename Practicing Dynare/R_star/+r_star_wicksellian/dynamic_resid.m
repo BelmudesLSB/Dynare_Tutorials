@@ -20,17 +20,17 @@ function residual = dynamic_resid(T, y, x, params, steady_state, it_, T_flag)
 %
 
 if T_flag
-    T = r_star_taylor.dynamic_resid_tt(T, y, x, params, steady_state, it_);
+    T = r_star_wicksellian.dynamic_resid_tt(T, y, x, params, steady_state, it_);
 end
 residual = zeros(16, 1);
 lhs = y(21);
-rhs = params(11)+400*(y(9)-y(1)+y(15));
+rhs = params(10)+400*(y(9)-y(1)+y(15));
 residual(1) = lhs - rhs;
 lhs = y(22);
-rhs = params(9)+400*y(11);
+rhs = params(8)+400*y(11);
 residual(2) = lhs - rhs;
 lhs = y(23);
-rhs = params(9)+params(10)+400*y(13);
+rhs = params(8)+params(9)+400*y(13);
 residual(3) = lhs - rhs;
 lhs = y(8);
 rhs = y(24)-(y(13)-y(26)-y(19))*T(4);
@@ -60,16 +60,16 @@ lhs = params(2)*y(18)+T(2)*(y(18)-y(7)*T(3))-T(3)*params(1)*T(2)*(y(30)-y(18)*T(
 rhs = (params(1)*y(27)-y(15))*T(2)*T(3)+y(28)*params(1)*T(3)/(1-params(1)*T(3));
 residual(12) = lhs - rhs;
 lhs = y(13);
-rhs = params(6)*y(3)+(1-params(6))*(y(11)*params(7)+y(17)*params(8)/4)+params(18)/400*x(it_, 1);
+rhs = params(6)*y(3)+(1-params(6))*(y(19)+y(11)*params(7))+params(17)/400*x(it_, 1);
 residual(13) = lhs - rhs;
 lhs = y(16);
-rhs = params(12)*y(6)+params(15)/400*x(it_, 3);
+rhs = params(11)*y(6)+params(14)/400*x(it_, 3);
 residual(14) = lhs - rhs;
 lhs = y(15);
-rhs = params(13)*y(5)+params(16)/400*x(it_, 4);
+rhs = params(12)*y(5)+params(15)/400*x(it_, 4);
 residual(15) = lhs - rhs;
 lhs = y(14);
-rhs = params(14)*y(4)+params(17)/400*x(it_, 2);
+rhs = params(13)*y(4)+params(16)/400*x(it_, 2);
 residual(16) = lhs - rhs;
 
 end

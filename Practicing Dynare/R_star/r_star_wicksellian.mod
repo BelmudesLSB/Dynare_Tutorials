@@ -32,55 +32,34 @@ gya pia iras;
 
 % Parameters
 parameters
-beta omega xi eta zeta rho phipi phix pistar ra gammaa
+beta omega xi eta zeta rho phipi pistar ra gammaa
 rhodelta rhogamma rhou sigmadelta sigmagamma sigmau sigmai;
 
 %--------------------------------------------------------------------------
 % Set calibrated parameters 
 %--------------------------------------------------------------------------
-
-% Calibrated parameters original:
-%beta = 0.99;
-%omega = 0.9435;       
-%xi = 0.0004;       
-%eta = 0.7919;         
-%zeta = 0.4813;        
-%rho = 0.7969;         
-%phipi = 1.4414;      
-%phix = 0.5110;      
-%pistar = 2.2251;      
-%ra = 1.6378;         
-%gammaa = 2.2555;      
-%rhodelta = 0.9665;    
-%rhogamma = 0.7232;    
-%rhou = 0.2108;        
-%sigmadelta = 1.0209;  
-%sigmagamma = 1.8365;  
-%sigmau = 0.4249;      
-%sigmai = 0.34;     
-
+   
 % Median estimates calibrated parameters:
 beta = 0.99;
-omega = 0.99;       
-xi = 0.0021;       
-eta = 0.62;         
-zeta = 0.48;        
-rho = 0.75;         
-phipi = 1.14;
+omega = 0.94;       
+xi = 0.0303;       
+eta = 0.47;         
+zeta = 0.18;        
+rho = 0.81;         
+phipi = 1.47;      
       
-phix = 1.44;
+pistar = 2.39;      
+ra = 2.34;         
+gammaa = 2.95;
       
-pistar = 2.38;      
-ra = 1.88;         
-gammaa = 2.93;
-      
-rhodelta = 0.91;    
-rhogamma = 0.55;    
-rhou = 0.37;        
-sigmadelta = 1.29;  
-sigmagamma = 1.88;  
-sigmau = 0.41;      
-sigmai = 0.33;      
+rhodelta = 0.63;    
+rhogamma = 0.97;    
+rhou = 0.89;
+        
+sigmadelta = 0.78;  
+sigmagamma = 1.07;  
+sigmau = 0.29;      
+sigmai = 0.31;      
 
 %--------------------------------------------------------------------------
 % Model
@@ -132,12 +111,9 @@ ie = re + pi(+1); //{Where is this coming from?}
 omega*ye + phigamma*(ye - etagamma*ye(-1)) - beta*phigamma*etagamma*(ye(+1) - etagamma*ye) = phigamma*etagamma*(beta*gamma(+1) - gamma) + ((beta*etagamma)/(1-beta*etagamma))*delta(+1);
 
 %% Policy rules
-% (9) T: Taylor Rule
-i = rho*i(-1) + (1-rho)*(phipi*pi + phix/4*xe) + sigmai/400*ei;
-% W: Wicksellian Rule
-% i = rho*i(-1) + (1-rho)*(re + phipi*pi) + sigmai/400*ei;
-% T + W
-%i = rho*i(-1) + (1-rho)*(re + phipi*pi + phix/4*xe) + sigmai/400*ei;
+%W: Wicksellian Rule
+i = rho*i(-1) + (1-rho)*(re + phipi*pi) + sigmai/400*ei;
+
 
 %% Shocks: (10) - (12)
 delta = rhodelta*delta(-1) + sigmadelta/400*edelta;
@@ -163,7 +139,7 @@ steady;
 
 check;
 
-stoch_simul(irf=0,order=1, graph_format=pdf, nograph);
+stoch_simul(irf=0,order=1,graph_format=pdf, nograph);
 calib_smoother(datafile=data_EU_gdpd);
 %smoother2histval(outfile = initial_conditions_for_forecasting);
 %histval_file(datafile = initial_conditions_for_forecasting);

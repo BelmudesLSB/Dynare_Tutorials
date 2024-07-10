@@ -14,7 +14,7 @@ tic0 = tic;
 % Define global variables.
 global M_ options_ oo_ estim_params_ bayestopt_ dataset_ dataset_info estimation_info ys0_ ex0_
 options_ = [];
-M_.fname = 'r_star_taylor';
+M_.fname = 'r_star_wicksellian';
 M_.dynare_version = '5.4';
 oo_.dynare_version = '5.4';
 options_.dynare_version = '5.4';
@@ -89,9 +89,9 @@ M_.endo_names(16) = {'iras'};
 M_.endo_names_tex(16) = {'iras'};
 M_.endo_names_long(16) = {'iras'};
 M_.endo_partitions = struct();
-M_.param_names = cell(18,1);
-M_.param_names_tex = cell(18,1);
-M_.param_names_long = cell(18,1);
+M_.param_names = cell(17,1);
+M_.param_names_tex = cell(17,1);
+M_.param_names_long = cell(17,1);
 M_.param_names(1) = {'beta'};
 M_.param_names_tex(1) = {'beta'};
 M_.param_names_long(1) = {'beta'};
@@ -113,44 +113,41 @@ M_.param_names_long(6) = {'rho'};
 M_.param_names(7) = {'phipi'};
 M_.param_names_tex(7) = {'phipi'};
 M_.param_names_long(7) = {'phipi'};
-M_.param_names(8) = {'phix'};
-M_.param_names_tex(8) = {'phix'};
-M_.param_names_long(8) = {'phix'};
-M_.param_names(9) = {'pistar'};
-M_.param_names_tex(9) = {'pistar'};
-M_.param_names_long(9) = {'pistar'};
-M_.param_names(10) = {'ra'};
-M_.param_names_tex(10) = {'ra'};
-M_.param_names_long(10) = {'ra'};
-M_.param_names(11) = {'gammaa'};
-M_.param_names_tex(11) = {'gammaa'};
-M_.param_names_long(11) = {'gammaa'};
-M_.param_names(12) = {'rhodelta'};
-M_.param_names_tex(12) = {'rhodelta'};
-M_.param_names_long(12) = {'rhodelta'};
-M_.param_names(13) = {'rhogamma'};
-M_.param_names_tex(13) = {'rhogamma'};
-M_.param_names_long(13) = {'rhogamma'};
-M_.param_names(14) = {'rhou'};
-M_.param_names_tex(14) = {'rhou'};
-M_.param_names_long(14) = {'rhou'};
-M_.param_names(15) = {'sigmadelta'};
-M_.param_names_tex(15) = {'sigmadelta'};
-M_.param_names_long(15) = {'sigmadelta'};
-M_.param_names(16) = {'sigmagamma'};
-M_.param_names_tex(16) = {'sigmagamma'};
-M_.param_names_long(16) = {'sigmagamma'};
-M_.param_names(17) = {'sigmau'};
-M_.param_names_tex(17) = {'sigmau'};
-M_.param_names_long(17) = {'sigmau'};
-M_.param_names(18) = {'sigmai'};
-M_.param_names_tex(18) = {'sigmai'};
-M_.param_names_long(18) = {'sigmai'};
+M_.param_names(8) = {'pistar'};
+M_.param_names_tex(8) = {'pistar'};
+M_.param_names_long(8) = {'pistar'};
+M_.param_names(9) = {'ra'};
+M_.param_names_tex(9) = {'ra'};
+M_.param_names_long(9) = {'ra'};
+M_.param_names(10) = {'gammaa'};
+M_.param_names_tex(10) = {'gammaa'};
+M_.param_names_long(10) = {'gammaa'};
+M_.param_names(11) = {'rhodelta'};
+M_.param_names_tex(11) = {'rhodelta'};
+M_.param_names_long(11) = {'rhodelta'};
+M_.param_names(12) = {'rhogamma'};
+M_.param_names_tex(12) = {'rhogamma'};
+M_.param_names_long(12) = {'rhogamma'};
+M_.param_names(13) = {'rhou'};
+M_.param_names_tex(13) = {'rhou'};
+M_.param_names_long(13) = {'rhou'};
+M_.param_names(14) = {'sigmadelta'};
+M_.param_names_tex(14) = {'sigmadelta'};
+M_.param_names_long(14) = {'sigmadelta'};
+M_.param_names(15) = {'sigmagamma'};
+M_.param_names_tex(15) = {'sigmagamma'};
+M_.param_names_long(15) = {'sigmagamma'};
+M_.param_names(16) = {'sigmau'};
+M_.param_names_tex(16) = {'sigmau'};
+M_.param_names_long(16) = {'sigmau'};
+M_.param_names(17) = {'sigmai'};
+M_.param_names_tex(17) = {'sigmai'};
+M_.param_names_long(17) = {'sigmai'};
 M_.param_partitions = struct();
 M_.exo_det_nbr = 0;
 M_.exo_nbr = 4;
 M_.endo_nbr = 16;
-M_.param_nbr = 18;
+M_.param_nbr = 17;
 M_.orig_endo_nbr = 16;
 M_.aux_vars = [];
 options_.varobs = cell(3, 1);
@@ -241,9 +238,9 @@ M_.mapping.i.eqidx = [3 4 6 13 ];
 M_.mapping.u.eqidx = [7 16 ];
 M_.mapping.gamma.eqidx = [1 10 12 15 ];
 M_.mapping.delta.eqidx = [10 12 14 ];
-M_.mapping.xe.eqidx = [5 7 9 13 ];
+M_.mapping.xe.eqidx = [5 7 9 ];
 M_.mapping.ye.eqidx = [5 9 10 12 ];
-M_.mapping.re.eqidx = [4 10 11 ];
+M_.mapping.re.eqidx = [4 10 11 13 ];
 M_.mapping.ie.eqidx = [11 ];
 M_.mapping.gya.eqidx = [1 ];
 M_.mapping.pia.eqidx = [2 ];
@@ -264,7 +261,7 @@ oo_.steady_state = zeros(16, 1);
 M_.maximum_exo_lag = 0;
 M_.maximum_exo_lead = 0;
 oo_.exo_steady_state = zeros(4, 1);
-M_.params = NaN(18, 1);
+M_.params = NaN(17, 1);
 M_.endo_trends = struct('deflator', cell(16, 1), 'log_deflator', cell(16, 1), 'growth_factor', cell(16, 1), 'log_growth_factor', cell(16, 1));
 M_.NNZDerivatives = [60; -1; -1; ];
 M_.static_tmp_nbr = [4; 0; 0; 0; ];
@@ -272,40 +269,38 @@ M_.model_local_variables_static_tt_idxs = {
 };
 M_.params(1) = 0.99;
 beta = M_.params(1);
-M_.params(2) = 0.99;
+M_.params(2) = 0.94;
 omega = M_.params(2);
-M_.params(3) = 0.0021;
+M_.params(3) = 0.0303;
 xi = M_.params(3);
-M_.params(4) = 0.62;
+M_.params(4) = 0.47;
 eta = M_.params(4);
-M_.params(5) = 0.48;
+M_.params(5) = 0.18;
 zeta = M_.params(5);
-M_.params(6) = 0.75;
+M_.params(6) = 0.81;
 rho = M_.params(6);
-M_.params(7) = 1.14;
+M_.params(7) = 1.47;
 phipi = M_.params(7);
-M_.params(8) = 1.44;
-phix = M_.params(8);
-M_.params(9) = 2.38;
-pistar = M_.params(9);
-M_.params(10) = 1.88;
-ra = M_.params(10);
-M_.params(11) = 2.93;
-gammaa = M_.params(11);
-M_.params(12) = 0.91;
-rhodelta = M_.params(12);
-M_.params(13) = 0.55;
-rhogamma = M_.params(13);
-M_.params(14) = 0.37;
-rhou = M_.params(14);
-M_.params(15) = 1.29;
-sigmadelta = M_.params(15);
-M_.params(16) = 1.88;
-sigmagamma = M_.params(16);
-M_.params(17) = 0.41;
-sigmau = M_.params(17);
-M_.params(18) = 0.33;
-sigmai = M_.params(18);
+M_.params(8) = 2.39;
+pistar = M_.params(8);
+M_.params(9) = 2.34;
+ra = M_.params(9);
+M_.params(10) = 2.95;
+gammaa = M_.params(10);
+M_.params(11) = 0.63;
+rhodelta = M_.params(11);
+M_.params(12) = 0.97;
+rhogamma = M_.params(12);
+M_.params(13) = 0.89;
+rhou = M_.params(13);
+M_.params(14) = 0.78;
+sigmadelta = M_.params(14);
+M_.params(15) = 1.07;
+sigmagamma = M_.params(15);
+M_.params(16) = 0.29;
+sigmau = M_.params(16);
+M_.params(17) = 0.31;
+sigmai = M_.params(17);
 %
 % SHOCKS instructions
 %
@@ -335,24 +330,24 @@ disp(['Total computing time : ' dynsec2hms(oo_.time) ]);
 if ~exist([M_.dname filesep 'Output'],'dir')
     mkdir(M_.dname,'Output');
 end
-save([M_.dname filesep 'Output' filesep 'r_star_taylor_results.mat'], 'oo_', 'M_', 'options_');
+save([M_.dname filesep 'Output' filesep 'r_star_wicksellian_results.mat'], 'oo_', 'M_', 'options_');
 if exist('estim_params_', 'var') == 1
-  save([M_.dname filesep 'Output' filesep 'r_star_taylor_results.mat'], 'estim_params_', '-append');
+  save([M_.dname filesep 'Output' filesep 'r_star_wicksellian_results.mat'], 'estim_params_', '-append');
 end
 if exist('bayestopt_', 'var') == 1
-  save([M_.dname filesep 'Output' filesep 'r_star_taylor_results.mat'], 'bayestopt_', '-append');
+  save([M_.dname filesep 'Output' filesep 'r_star_wicksellian_results.mat'], 'bayestopt_', '-append');
 end
 if exist('dataset_', 'var') == 1
-  save([M_.dname filesep 'Output' filesep 'r_star_taylor_results.mat'], 'dataset_', '-append');
+  save([M_.dname filesep 'Output' filesep 'r_star_wicksellian_results.mat'], 'dataset_', '-append');
 end
 if exist('estimation_info', 'var') == 1
-  save([M_.dname filesep 'Output' filesep 'r_star_taylor_results.mat'], 'estimation_info', '-append');
+  save([M_.dname filesep 'Output' filesep 'r_star_wicksellian_results.mat'], 'estimation_info', '-append');
 end
 if exist('dataset_info', 'var') == 1
-  save([M_.dname filesep 'Output' filesep 'r_star_taylor_results.mat'], 'dataset_info', '-append');
+  save([M_.dname filesep 'Output' filesep 'r_star_wicksellian_results.mat'], 'dataset_info', '-append');
 end
 if exist('oo_recursive_', 'var') == 1
-  save([M_.dname filesep 'Output' filesep 'r_star_taylor_results.mat'], 'oo_recursive_', '-append');
+  save([M_.dname filesep 'Output' filesep 'r_star_wicksellian_results.mat'], 'oo_recursive_', '-append');
 end
 if ~isempty(lastwarn)
   disp('Note: warning(s) encountered in MATLAB/Octave code')
