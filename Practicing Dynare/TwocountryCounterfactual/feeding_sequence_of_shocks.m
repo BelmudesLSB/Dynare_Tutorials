@@ -38,6 +38,6 @@ y2 = simult_(M_,options_,initial_condition_states,oo_.dr,shock_matrix,1);
 
 % plot:
 
-plot(linspace(1,200,200), y2(2,:), 'r.', LineWidth=2)
+plot(linspace(1,200,200), y2(2,:), 'r', LineWidth=2)
 hold on
 plot(linspace(1,200,200), oo_.SmoothedVariables.c2, 'b-', LineWidth=2)
