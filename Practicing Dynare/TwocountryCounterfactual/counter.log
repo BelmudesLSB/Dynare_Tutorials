@@ -1,0 +1,75 @@
+Starting Dynare (version 6.0).
+Calling Dynare with arguments: none
+Starting preprocessing of the model file ... 
+Found 8 equation(s). 
+Evaluating expressions... 
+Computing static model derivatives (order 1). 
+Normalizing the static model... 
+Finding the optimal block decomposition of the static model... 
+5 block(s) found: 
+  4 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 4 equation(s) 
+                                 and 4 feedback variable(s). 
+Computing dynamic model derivatives (order 1). 
+Normalizing the dynamic model... 
+Finding the optimal block decomposition of the dynamic model... 
+4 block(s) found: 
+  3 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 4 equation(s) 
+                                 and 4 feedback variable(s). 
+Preprocessing completed. 
+Preprocessing time: 0h00m00s.
+
+STEADY-STATE RESULTS:
+
+c1 		 0.823947
+c2 		 0.823947
+k1 		 2.89526
+k2 		 2.89526
+a1 		 0
+a2 		 0
+y1 		 1.1581
+y2 		 1.1581
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+       7.393e-15        7.393e-15                0
+            0.85             0.85                0
+            0.85             0.85                0
+          0.9592           0.9592                0
+           1.064            1.064                0
+       1.042e+17       -1.042e+17                0
+       1.262e+17        1.262e+17                0
+      2.282e+119      -2.282e+119                0
+
+There are 4 eigenvalue(s) larger than 1 in modulus for 4 forward-looking variable(s)
+The rank condition is verified.
+
+
+MODEL SUMMARY
+
+  Number of variables:         8
+  Number of stochastic shocks: 2
+  Number of state variables:   4
+  Number of jumpers:           4
+  Number of static variables:  2
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables          e1        e2
+e1           0.000000  0.000000
+e2           0.000000  0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                  c1              c2              k1              k2              a1              a2              y1              y2
+Constant                    0.823947        0.823947        2.895259        2.895259               0               0        1.158104        1.158104
+k1(-1)                      0.243036        0.243036        0.479577        0.479577               0               0        0.400000               0
+k2(-1)                      0.243036        0.243036        0.479577        0.479577               0               0               0        0.400000
+a1(-1)                      0.118991        0.118991        0.661897       -0.542270        0.850000               0        0.850000               0
+a2(-1)                      0.118991        0.118991       -0.542270        0.661897               0        0.850000               0        0.850000
+e1                          0.139989        0.139989        0.778702       -0.637965        1.000000               0        1.000000               0
+e2                          0.139989        0.139989       -0.637965        0.778702               0        1.000000               0        1.000000
+
+STOCH_SIMUL error: The horizon of simulation is shorter than the number of observations to be dropped.
+STOCH_SIMUL error: Either increase options_.periods or decrease options_.drop.
+Total computing time : 0h00m00s

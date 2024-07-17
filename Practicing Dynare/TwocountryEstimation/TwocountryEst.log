@@ -18,7 +18,7 @@ Finding the optimal block decomposition of the dynamic model...
   the largest simultaneous block has 4 equation(s) 
                                  and 4 feedback variable(s). 
 Preprocessing completed. 
-Preprocessing time: 0h00m00s.
+Preprocessing time: 0h00m01s.
 
 STEADY-STATE RESULTS:
 
@@ -94,7 +94,7 @@ FVAL          -435.9004
 Improvement   28.2506
 Ftol          1e-05
 Htol          1e-05
-Elapsed time for iteration 0.30787 s.
+Elapsed time for iteration 0.35367 s.
  
 Iteration 2
 Predicted improvement:        0.030728089
@@ -118,7 +118,7 @@ FVAL          -435.9446
 Improvement   0.044159
 Ftol          1e-05
 Htol          1e-05
-Elapsed time for iteration 0.18144 s.
+Elapsed time for iteration 0.18585 s.
  
 Iteration 3
 Predicted improvement:        0.000002959
@@ -264,4 +264,4 @@ standard deviation of shocks
 
 e1           0.090       0.0829      0.0765      0.0901     invg      10.0000
 e2           0.090       0.0814      0.0749      0.0874     invg      10.0000
-Total computing time : 0h00m16s
+Total computing time : 0h00m19s

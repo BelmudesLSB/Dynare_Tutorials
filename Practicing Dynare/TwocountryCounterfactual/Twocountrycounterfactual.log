@@ -1,0 +1,123 @@
+Starting Dynare (version 6.0).
+Calling Dynare with arguments: none
+Starting preprocessing of the model file ... 
+Found 8 equation(s). 
+Evaluating expressions... 
+Computing static model derivatives (order 1). 
+Normalizing the static model... 
+Finding the optimal block decomposition of the static model... 
+5 block(s) found: 
+  4 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 4 equation(s) 
+                                 and 4 feedback variable(s). 
+Computing dynamic model derivatives (order 1). 
+Normalizing the dynamic model... 
+Finding the optimal block decomposition of the dynamic model... 
+4 block(s) found: 
+  3 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 4 equation(s) 
+                                 and 4 feedback variable(s). 
+Preprocessing completed. 
+Preprocessing time: 0h00m01s.
+
+STEADY-STATE RESULTS:
+
+c1 		 0.823947
+c2 		 0.823947
+k1 		 2.89526
+k2 		 2.89526
+a1 		 0
+a2 		 0
+y1 		 1.1581
+y2 		 1.1581
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+       7.393e-15        7.393e-15                0
+            0.85             0.85                0
+            0.85             0.85                0
+          0.9592           0.9592                0
+           1.064            1.064                0
+       1.042e+17       -1.042e+17                0
+       1.262e+17        1.262e+17                0
+      2.282e+119      -2.282e+119                0
+
+There are 4 eigenvalue(s) larger than 1 in modulus for 4 forward-looking variable(s)
+The rank condition is verified.
+
+
+MODEL SUMMARY
+
+  Number of variables:         8
+  Number of stochastic shocks: 2
+  Number of state variables:   4
+  Number of jumpers:           4
+  Number of static variables:  2
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables          e1        e2
+e1           0.006400  0.000000
+e2           0.000000  0.006400
+
+POLICY AND TRANSITION FUNCTIONS
+                                  c1              c2              k1              k2              a1              a2              y1              y2
+Constant                    0.823947        0.823947        2.895259        2.895259               0               0        1.158104        1.158104
+k1(-1)                      0.243036        0.243036        0.479577        0.479577               0               0        0.400000               0
+k2(-1)                      0.243036        0.243036        0.479577        0.479577               0               0               0        0.400000
+a1(-1)                      0.118991        0.118991        0.661897       -0.542270        0.850000               0        0.850000               0
+a2(-1)                      0.118991        0.118991       -0.542270        0.661897               0        0.850000               0        0.850000
+e1                          0.139989        0.139989        0.778702       -0.637965        1.000000               0        1.000000               0
+e2                          0.139989        0.139989       -0.637965        0.778702               0        1.000000               0        1.000000
+
+
+THEORETICAL MOMENTS
+VARIABLE         MEAN  STD. DEV.   VARIANCE
+c1             0.8239     0.0978     0.0096
+c2             0.8239     0.0978     0.0096
+k1             2.8953     0.2263     0.0512
+k2             2.8953     0.2263     0.0512
+a1             0.0000     0.1519     0.0231
+a2             0.0000     0.1519     0.0231
+y1             1.1581     0.2199     0.0483
+y2             1.1581     0.2199     0.0483
+
+
+
+VARIANCE DECOMPOSITION (in percent)
+          e1      e2
+c1     50.00   50.00
+c2     50.00   50.00
+k1     74.31   25.69
+k2     25.69   74.31
+a1    100.00    0.00
+a2      0.00  100.00
+y1     95.65    4.35
+y2      4.35   95.65
+
+
+
+MATRIX OF CORRELATIONS
+Variables         c1       c2       k1       k2       a1       a2       y1       y2
+c1            1.0000   1.0000   0.7253   0.7253   0.4618   0.4618   0.6115   0.6115
+c2            1.0000   1.0000   0.7253   0.7253   0.4618   0.4618   0.6115   0.6115
+k1            0.7253   0.7253   1.0000   0.0958   0.7311  -0.2197   0.8880  -0.0852
+k2            0.7253   0.7253   0.0958   1.0000  -0.2197   0.7311  -0.0852   0.8880
+a1            0.4618   0.4618   0.7311  -0.2197   1.0000   0.0000   0.9466  -0.0769
+a2            0.4618   0.4618  -0.2197   0.7311   0.0000   1.0000  -0.0769   0.9466
+y1            0.6115   0.6115   0.8880  -0.0852   0.9466  -0.0769   1.0000  -0.0900
+y2            0.6115   0.6115  -0.0852   0.8880  -0.0769   0.9466  -0.0900   1.0000
+
+
+
+COEFFICIENTS OF AUTOCORRELATION
+Order          1       2       3       4       5
+c1        0.9863  0.9691  0.9491  0.9270  0.9033
+c2        0.9863  0.9691  0.9491  0.9270  0.9033
+k1        0.9303  0.8678  0.8116  0.7607  0.7146
+k2        0.9303  0.8678  0.8116  0.7607  0.7146
+a1        0.8500  0.7225  0.6141  0.5220  0.4437
+a2        0.8500  0.7225  0.6141  0.5220  0.4437
+y1        0.9213  0.8155  0.7243  0.6454  0.5772
+y2        0.9213  0.8155  0.7243  0.6454  0.5772
+Total computing time : 0h00m01s
